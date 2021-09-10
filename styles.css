@@ -1,17 +1,25 @@
 html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *,
 :after,
 :before {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
   font-size: 15px;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.attribution_link {
+  color: #3e52a3;
 }
 
 h1 {
@@ -29,158 +37,121 @@ button {
 
 .container {
   max-width: 920px;
-  height: 510px;
+  min-height: 510px;
   margin-top: 160px;
   margin-left: auto;
   margin-right: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  justify-content: space-evenly;
+  align-items: stretch;
 }
-
 @media (max-width: 800px) {
   .container {
     max-width: 310px;
     height: 1320px;
     margin-top: 90px;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 
 .element {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 auto;
-          flex: 0 1 auto;
+  flex: 0 1 auto;
   min-width: 250px;
-  padding: 0 50px 0 50px;
-  display: -ms-grid;
+  padding: 0 50px;
   display: grid;
-  -ms-grid-columns: auto;
-      grid-template-columns: auto;
-  -ms-grid-rows: 50px 80px 70px 200px auto;
-      grid-template-rows: 50px 80px 70px 200px auto;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start;
+  grid-template-columns: auto;
+  grid-template-rows: 50px 80px 70px 200px auto;
+  align-items: start;
   justify-items: start;
 }
-
+@media (max-width: 800px) {
+  .element {
+    flex: 0 0 auto;
+    padding: 40px;
+  }
+}
 .element--orange {
   background-color: #e38826;
   border-radius: 8px 0 0 8px;
 }
-
+@media (max-width: 800px) {
+  .element--orange {
+    border-radius: 8px 8px 0 0;
+  }
+}
 .element--lightcyan {
   background-color: #006970;
 }
-
 .element--darkcyan {
   background-color: #004241;
   border-radius: 0 8px 8px 0;
 }
-
-.element__icon {
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 1;
-  grid-row: 2/3;
+@media (max-width: 800px) {
+  .element--darkcyan {
+    border-radius: 0 0 8px 8px;
+  }
 }
 
+.element__icon {
+  grid-row: 2/3;
+}
 .element__icon img {
   height: 40px;
   width: auto;
 }
 
 .element__title {
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 1;
   grid-row: 3/4;
   margin-top: 0;
 }
 
 .element__text {
-  -ms-grid-row: 4;
-  -ms-grid-row-span: 1;
   grid-row: 4/5;
   margin-top: 0;
   line-height: 1.5rem;
 }
-
-.element__button {
-  -ms-grid-row: 5;
-  -ms-grid-row-span: 1;
-  grid-row: 5/6;
-}
-
 @media (max-width: 800px) {
-  .element {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 auto;
-            flex: 0 0 auto;
-    padding: 40px;
-  }
-  .element--orange {
-    border-radius: 8px 8px 0 0;
-  }
-  .element--darkcyan {
-    border-radius: 0 0 8px 8px;
-  }
   .element__text {
     padding-top: 0px;
   }
-  .element__button {
-    margin-top: 20px;
-  }
 }
 
 .element__button {
+  grid-row: 5/6;
   width: 145px;
   height: 45px;
   background-color: white;
   border: white;
   border-radius: 25px;
 }
-
+@media (max-width: 800px) {
+  .element__button {
+    margin-top: 20px;
+  }
+}
 .element__button:hover {
   border: solid 2px rgba(255, 255, 255, 0.75);
   cursor: pointer;
 }
-
 .element__button--orange {
   color: #e38826;
 }
-
 .element__button--orange:hover {
   color: rgba(255, 255, 255, 0.75);
   background-color: #e38826;
 }
-
 .element__button--lightcyan {
   color: #006970;
 }
-
 .element__button--lightcyan:hover {
   color: rgba(255, 255, 255, 0.75);
   background-color: #006970;
 }
-
 .element__button--darkcyan {
   color: #004241;
 }
-
 .element__button--darkcyan:hover {
   color: rgba(255, 255, 255, 0.75);
   background-color: #004241;
-}
-/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=styles.css.map */

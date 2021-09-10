@@ -21,6 +21,15 @@ body {
   font-size: 15px;
 }
 
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 10px;
+}
+.attribution_link {
+  color: hsl(228, 45%, 44%);
+}
+
 h1 {
   font-family: $font-title;
   text-transform: uppercase;
@@ -35,16 +44,14 @@ button {
 
 .container {
   max-width: 920px;
-  height: 510px;
+  min-height: 510px;
   margin-top: 160px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   justify-content: space-evenly;
   align-items: stretch;
-}
-@media (max-width: $break-point) {
-  .container {
+  @media (max-width: $break-point) {
     max-width: 310px;
     height: 1320px;
     margin-top: 90px;
@@ -55,15 +62,22 @@ button {
 .element {
   flex: 0 1 auto;
   min-width: 250px;
-  padding: 0 50px 0 50px;
-  display: grid;  
+  padding: 0 50px;
+  display: grid;
   grid-template-columns: auto;
   grid-template-rows: 50px 80px 70px 200px auto;
   align-items: start;
   justify-items: start;
+  @media (max-width: $break-point) {
+    flex: 0 0 auto;
+    padding: 40px;
+  }
   &--orange {
     background-color: $orange;
     border-radius: 8px 0 0 8px;
+    @media (max-width: $break-point) {
+      border-radius: 8px 8px 0 0;
+    }
   }
   &--lightcyan {
     background-color: $lightcyan;
@@ -71,74 +85,64 @@ button {
   &--darkcyan {
     background-color: $darkcyan;
     border-radius: 0 8px 8px 0;
-  }
-  &__icon {
-    grid-row: 2/3;
-    & img {
-    height: 40px;
-    width: auto;  
-  }  
-  }
-  &__title {
-    grid-row: 3/4;
-    margin-top: 0;
-  }
-  &__text {
-    grid-row: 4/5;
-    margin-top: 0;
-    line-height: 1.5rem;
-  }
-  &__button {  
-    grid-row: 5/6;  
-  }
-}
-@media (max-width: $break-point) {
-  .element {
-    flex: 0 0 auto;
-    padding: 40px;
-    &--orange {
-      border-radius: 8px 8px 0 0;
-    }
-    &--darkcyan {
+    @media (max-width: $break-point) {
       border-radius: 0 0 8px 8px;
     }
-    &__text {
-      padding-top: 0px;
-    }
-    &__button {
-      margin-top: 20px;
-    }
+  }
+}
+.element__icon {
+  grid-row: 2/3;
+  & img {
+    height: 40px;
+    width: auto;
+  }
+}
+.element__title {
+  grid-row: 3/4;
+  margin-top: 0;
+}
+.element__text {
+  grid-row: 4/5;
+  margin-top: 0;
+  line-height: 1.5rem;
+  @media (max-width: $break-point) {
+    padding-top: 0px;
   }
 }
 .element__button {
-  width: 145px;
-  height: 45px;
-  background-color: white;
-  border: white;
-  border-radius: 25px;
-  &:hover {
-    border: solid 2px $neutral-transparent;
-    cursor: pointer;
-  }
-  &--orange {
-    color: $orange;
+    grid-row: 5/6;
+    width: 145px;
+    height: 45px;
+    background-color: white;
+    border: white;
+    border-radius: 25px;
+    @media (max-width: $break-point) {
+      margin-top: 20px;
+    }
     &:hover {
-      color: $neutral-transparent;
-      background-color: $orange;
+      border: solid 2px $neutral-transparent;
+      cursor: pointer;
+    }
+    &--orange {
+      color: $orange;
+      &:hover {
+        color: $neutral-transparent;
+        background-color: $orange;
+      }
+    }
+    &--lightcyan {
+      color: $lightcyan;
+      &:hover {
+        color: $neutral-transparent;
+        background-color: $lightcyan;
+      }
+    }
+    &--darkcyan {
+      color: $darkcyan;
+      &:hover {
+        color: $neutral-transparent;
+        background-color: $darkcyan;
+      }
     }
   }
-  &--lightcyan {
-    color: $lightcyan;
-    &:hover {
-      color: $neutral-transparent;
-      background-color: $lightcyan;
-    }
-  }
-  &--darkcyan {
-    color: $darkcyan;
-    &:hover {
-      color: $neutral-transparent;
-      background-color: $darkcyan;
-    }
-  }
-}
+
